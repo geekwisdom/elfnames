@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Welcome to Geek Wisdom. If you are reading this, then welcome to the club ! -->
+<title>Geek Wisdom - What is your elf name? </title>
+<!-- RSS Feed -->
+<link rel="alternate" type="application/rss+xml" title="Geek Wisdom - RSS" href="https://geekwizdom.blogspot.com/feeds/posts/default?alt=rss" />
+
+<link rel="stylesheet" type="text/css" href="/styles/blogstyle.css">
+
+<!-- Standard Meta data -->
+<meta name="Author" CONTENT="Brad Detchevery">
+<meta name="Publisher" CONTENT="Brad Detchevery">
+<meta name="Content-Language" CONTENT="en-US">
+<meta name="description" content="What is your elf name?">
+
+
+<!-- Open Graph metadata -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Geek Wisdom" />
+<meta property="og:title" content="Geek Wisdom - What is your elfname?" />
+<meta property="og:url" content="http://geekwisdom.org/games/elfname/index.php" />
+<meta property="og:description" content="Find out your unique elf name." />
+<meta property="og:image" content="http://geekwisdom.org/games/elfname/elfcard1.png" />
+
+<!-- Twitter metadata -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@TrueGeekWisdom">
+<meta name="twitter:title" content="Geek Wisdom - Elf Name Generator">
+<meta name="twitter:image" content="http://geekwisdom.org/elfcard1.png">
+<meta name="twitter:description" content="What is your elfname?">
+</head>
+<body>
+<script type="text/javascript">
+function updateimage()
+{
+var gender=document.getElementById("gend");
+var theimg=document.getElementById("elfimage");
+if (gender.value == "male") theimg.src="elfcard2.png";
+else theimg.src="elfcard1.png";
+}
+</script>
+<h1>What is your ELf Name ?</h1>
+
+<form onSubmit="return validateform();" action="/games/elfnames/index.php" method="POST">
+<table>
+
+<tr>
+<td align="center" width="20%">
+<img id="elfimage" src="elfcard2.png" width="50%" /><br/>
+</td>
+<td>
+<table>
+<tr>
+<td>Character Gender: </td><td>
+<select onchange="updateimage();" id="gend" name="gender">
+<option value="male">male</option>
+<option value="female">female</option>
+<option value="male">man</option>
+<option value="female">woman</option>
+<option value="male">boy</option>
+<option value="female">girl</option>
+<option value="random">other</option>
+<option value="random">undecided</option>
+<option value="random">indeterminate</option>
+</select>(* Required)
+</td>
+</tr>
+<tr>
+<td>Your "Real Name": </td><td><input type="text" id="hnd" name="handle" maxsize="12"></input>&nbsp;&nbsp;(Optional)</TD>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><input type="submit" name="submit" value="Generate!" />
+</td>
+</tr>
+</table>
+</tr>
+</td>
+</table>
+<p/>
+</form>
+<h1>How it works </h1>
+<p><h2>FOR ENTERTAINMENT PURPOSES ONLY</h2></p>
+<div style="overflow:scroll; height:250px;background-color:#ccc;color:black;font-size:150%;border: 2px solid #555555;">
+Choose your identified gender, and optionally enter your 'REAL NAME' (it can be any real name) and hit "Generate!".
+This service will then give assign you - you're very own Elf Name.
+<br/><br/>
+<script type="text/javascript">
+
+function validateform()
+{
+var gender=document.getElementById("gend");
+if (gender.value == "random")
+ {
+ var g = Math.floor(Math.random() * 2) + 1;
+ if (g == 1) gender.value="male";
+ else gender.value="female";
+ }
+if (gender.value.trim() == "")
+ {
+ alert ("You must choose an associated gender. Click 'undecided' if you want a  random assignment.");
+ return false;
+ }
+
+if (typeof(localStorage) !== "undefined") 
+{
+	localStorage.setItem("elfgen","true");
+
+    // Code for localStorage/sessionStorage.
+} 
+
+
+return true;
+}
+
+if (typeof(localStorage) !== "undefined") 
+{
+	var elfname = localStorage.getItem("lastelf");
+        if (lastelf != null) window.location=elfname;
+
+    // Code for localStorage/sessionStorage.
+} 
+
+</script>
+
+</body>
+</html>

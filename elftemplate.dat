@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Welcome to Geek Wisdom. If you are reading this, then welcome to the club ! -->
+<title>Geek Wisdom - Your Elf Name is %elfname% </title>
+<!-- RSS Feed -->
+<link rel="alternate" type="application/rss+xml" title="Geek Wisdom - RSS" href="https://geekwizdom.blogspot.com/feeds/posts/default?alt=rss" />
+
+<link rel="stylesheet" type="text/css" href="/styles/blogstyle.css">
+
+<!-- Standard Meta data -->
+<meta name="Author" CONTENT="Brad Detchevery">
+<meta name="Publisher" CONTENT="Brad Detchevery">
+<meta name="Content-Language" CONTENT="en-US">
+<meta name="description" content="Your Elf name is %elfname%">
+<!-- Open Graph metadata -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Geek Wisdom" />
+<meta property="og:title" content="My elfname is %elfname% !" />
+<meta property="og:url" content="http://geekwisdom.org/games/elfnames/%filename%" />
+<meta property="og:description" content="%bg%. Want know your elfname too?" />
+<meta property="og:image" content="http://geekwisdom.org/games/elfnames/%elfimage%" />
+
+<!-- Twitter metadata -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@TrueGeekWisdom">
+<meta name="twitter:title" content="I found out my elf name is %elfname%. What's yours?">
+<meta name="twitter:image" content="http://geekwisdom.org/games/elfnames/%elfimage%">
+<meta name="twitter:description" content="Learn your elfname.">
+<style>
+.twitter-share-button[style] { vertical-align: text-bottom !important; }
+header {
+	position:absolute;
+	top: 10px;
+	border:0px;
+	padding:0px;
+	margin:0px;
+    }
+
+    main {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 68%;
+        z-index: 2; /* Make sure its above other items. */
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	color: green;
+        padding: 10px;
+        border: 2px solid #555555;
+        border-radius: 5px;
+        text-align: left;
+    }
+
+</style>
+
+</head>
+<body>
+<script type="text/javascript">
+if (typeof(localStorage) !== "undefined") 
+{
+    var hasgen=localStorage.getItem("elfgen");
+    if (hasgen == null) window.location="/games/elfnames/";
+    else
+     {
+     localStorage.setItem("elfname","%elfname%");
+     localStorage.setItem("lastelf","/games/elfname/%filename%");
+
+     }
+} 
+</script>
+<script>
+window.addEventListener('DOMContentLoaded', function() { document.getElementById("fbshare").setAttribute("data-href",window.location); }, true);
+
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId={YOURAPPID}';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+</script>
+<h1 style="text-align:center">Your elf name is %elfname%</h1>
+<p style="text-align:center">
+<img src="%elfimage%" border="0"/>
+</p>
+<p/>
+
+<!-- add facebook share button -->
+<div align="center">
+<div id="fbshare" class="fb-share-button" 
+    data-href="" 
+    data-layout="button_count">
+  </div>
+&nbsp;
+<a class="twitter-share-button"
+  href="https://twitter.com/intent/tweet?text=What is your Elf Name?">
+Tweet</a>
+</div>
+<p/>
+
+</body>
+</html>
